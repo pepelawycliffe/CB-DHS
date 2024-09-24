@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "109782585168",
+    "project_id": "cbdhs-f3a24",
+    "storage_bucket": "cbdhs-f3a24.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:109782585168:android:f9b4fed9963483a887e655",
+        "android_client_info": {
+          "package_name": "com.example.cb_dhs"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-byfVauIcmAb7lInty0ILU_Du8j9_YG0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
