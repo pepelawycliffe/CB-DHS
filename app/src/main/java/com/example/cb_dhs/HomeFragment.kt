@@ -8,12 +8,12 @@ import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 
+
 @Suppress("DEPRECATION")
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
         super.onViewCreated(view, savedInstanceState)
         (requireActivity() as AppCompatActivity).supportActionBar?.apply {
             title = resources.getString(R.string.app_name)
@@ -23,7 +23,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         (activity as MainActivity).setDrawerEnabled(true)
         setOnClicks()
     }
-
     private fun setOnClicks() {
         requireView().findViewById<CardView>(R.id.item_new_patient).setOnClickListener {
             findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToAddPatientFragment())

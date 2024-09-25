@@ -1,7 +1,9 @@
 plugins {
     id("com.android.application")
     id("kotlin-android")
+    id("kotlin-kapt")
     id("androidx.navigation.safeargs.kotlin")
+//    id("com.google.dagger.hilt.android")
 //    alias(libs.plugins.google.gms.google.services)
 //    id("com.google.firebase.crashlytics")
     id("com.google.gms.google-services")
@@ -116,6 +118,15 @@ dependencies {
     implementation("com.google.android.fhir:data-capture:1.1.0")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
     implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.6.0")
+
 //    ........................................end fhir...................................
+    // Dagger Hilt
+    implementation("com.google.dagger:hilt-android:2.44")
+    implementation("com.google.android.gms:play-services-auth:20.6.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
+
+//    kapt("com.google.dagger:hilt-android-compiler:2.44")
+
 }
 

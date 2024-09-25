@@ -26,7 +26,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.cb_dhs.databinding.ActivityMainBinding
-import com.example.cb_dhs.screens.common.auth.model.AuthViewModel
 
 
 const val MAX_RESOURCE_COUNT = 20
@@ -35,10 +34,10 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var drawerToggle: ActionBarDrawerToggle
     private val viewModel: MainActivityViewModel by viewModels()
-    val authViewModel: AuthViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+//        setContentView(R.layout.fragment_login)
 
 
         binding = ActivityMainBinding.inflate(layoutInflater)

@@ -64,4 +64,21 @@
     <string name="last_sync">Last sync</string>
     <string name="syncing">Syncing</string>
     <string name="sync">Sync</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fullName">Full Name</string>
+    <string name="email">E-mail</string>
+    <string name="password">Password</string>
+    <string name="conPassword">Confirm Password</string>
+    <string name="login">Login</string>
+    <string name="signUp">Sign up</string>
+    <string name="signUp_btn">Sign Up</string>
+
+
+    <string name="token">Sign Up</string>
+    <string name="haveAccount">Don\'t have an account?&#160;</string>
+    <string name="sign_up_now"><u>Sign Up Now</u></string>
+    <string name="youHaveAccount">You have an account?&#160;</string>
+    <string name="tvLogin"><u>Login</u></string>
+
 </resources>
