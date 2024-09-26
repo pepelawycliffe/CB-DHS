@@ -15,6 +15,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         (requireActivity() as AppCompatActivity).supportActionBar?.apply {
             title = resources.getString(R.string.app_name)
             setDisplayHomeAsUpEnabled(true)
@@ -22,6 +23,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         setHasOptionsMenu(true)
         (activity as MainActivity).setDrawerEnabled(true)
         setOnClicks()
+
     }
     private fun setOnClicks() {
         requireView().findViewById<CardView>(R.id.item_new_patient).setOnClickListener {

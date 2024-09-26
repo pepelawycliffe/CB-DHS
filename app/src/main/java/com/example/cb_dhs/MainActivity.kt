@@ -30,6 +30,7 @@ import com.example.cb_dhs.databinding.ActivityMainBinding
 
 const val MAX_RESOURCE_COUNT = 20
 
+@Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var drawerToggle: ActionBarDrawerToggle
@@ -37,8 +38,36 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        setContentView(R.layout.fragment_login)
 
+//        val navController = findNavController(R.id.nav_host_fragment)
+
+
+//        val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottomNavigationView)
+//        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+//            when (item.itemId) {
+//                R.id.navigation_home -> {
+//                    HomeFragment()
+////                    navController.navigate(R.id.home_fragment)
+//                    true
+//                }
+//
+//                R.id.navigation_patient -> {
+//                    PatientListFragment()
+////                    navController.navigate(R.id.patient_list)
+//                    true
+//                }
+//
+//
+//
+//                R.id.navigation_profile -> {
+//                    ProfileFragment()
+////                    navController.navigate(R.id.profile)
+//                    true
+//                }
+//
+//                else -> false
+//            }
+//        }
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -47,15 +76,6 @@ class MainActivity : AppCompatActivity() {
         observeLastSyncTime()
         viewModel.updateLastSyncTimestamp()
 
-//        AuthNavigation(authViewModel = authViewModel)
-
-//        setContent {
-//
-//                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding->
-//                    AuthNavigation(modifier =Modifier.padding(innerPadding), authViewModel = authViewModel)
-//                }
-//
-//        }
 
     }
 
@@ -109,4 +129,6 @@ class MainActivity : AppCompatActivity() {
                 it
         }
     }
+
+
 }

@@ -9,9 +9,6 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
 import com.example.cb_dhs.api.SessionManager
 import com.example.cb_dhs.databinding.FragmentProfileBinding
-import com.example.cb_dhs.utils.Resource
-import com.example.cb_dhs.utils.hide
-import com.example.cb_dhs.utils.show
 import com.example.cb_dhs.viewModel.AuthViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -33,25 +30,25 @@ class ProfileFragment : Fragment() {
         getUserInfo()
 
         authViewModel.userInfoResponse.observe(viewLifecycleOwner) {
-            when (it) {
-                is Resource.Loading -> {
-                    binding.progressBar.show()
-                }
-
-                is Resource.Success -> {
-                    binding.progressBar.hide()
-                    binding.apply {
-                        tvName.text = it.data!!.user.name
-                        tvEmail.text = it.data.user.email
-                    }
-                }
-
-                is Resource.Error -> {
-                    binding.progressBar.hide()
-                }
-
-                else -> {}
-            }
+//            when (it) {
+//                is Resource.Loading -> {
+//                    binding.progressBar.show()
+//                }
+//
+//                is Resource.Success -> {
+//                    binding.progressBar.hide()
+//                    binding.apply {
+//                        tvName.text = it.data!!.user.name
+//                        tvEmail.text = it.data.user.email
+//                    }
+//                }
+//
+//                is Resource.Error -> {
+//                    binding.progressBar.hide()
+//                }
+//
+//                else -> {}
+//            }
         }
 
         return binding.root
