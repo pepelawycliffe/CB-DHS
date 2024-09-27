@@ -41,35 +41,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-//        val navController = findNavController(R.id.nav_host_fragment)
 
-
-//        val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottomNavigationView)
-//        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
-//            when (item.itemId) {
-//                R.id.navigation_home -> {
-//                    HomeFragment()
-////                    navController.navigate(R.id.home_fragment)
-//                    true
-//                }
-//
-//                R.id.navigation_patient -> {
-//                    PatientListFragment()
-////                    navController.navigate(R.id.patient_list)
-//                    true
-//                }
-//
-//
-//
-//                R.id.navigation_profile -> {
-//                    ProfileFragment()
-////                    navController.navigate(R.id.profile)
-//                    true
-//                }
-//
-//                else -> false
-//            }
-//        }
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)

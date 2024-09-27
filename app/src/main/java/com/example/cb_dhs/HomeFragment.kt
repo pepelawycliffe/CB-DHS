@@ -16,6 +16,37 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //        val navController = findNavController(R.id.nav_host_fragment)
+
+
+//        val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottomNavigationView)
+//        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+//            when (item.itemId) {
+//                R.id.navigation_home -> {
+//                    HomeFragment()
+////                    navController.navigate(R.id.home_fragment)
+//                    true
+//                }
+//
+//                R.id.navigation_patient -> {
+//                    PatientListFragment()
+////                    navController.navigate(R.id.patient_list)
+//                    true
+//                }
+//
+//
+//
+//                R.id.navigation_profile -> {
+//                    ProfileFragment()
+////                    navController.navigate(R.id.profile)
+//                    true
+//                }
+//
+//                else -> false
+//            }
+//        }
+
+
         (requireActivity() as AppCompatActivity).supportActionBar?.apply {
             title = resources.getString(R.string.app_name)
             setDisplayHomeAsUpEnabled(true)

@@ -79,7 +79,6 @@
                 app:hintTextColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView1"
                 app:startIconDrawable="@drawable/name"
                 app:startIconTint="@color/onPrimary_blue_20">
 
