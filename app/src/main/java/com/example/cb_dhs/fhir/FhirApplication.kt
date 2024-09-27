@@ -13,8 +13,10 @@ import com.google.android.fhir.datacapture.DataCaptureConfig
 import com.google.android.fhir.datacapture.XFhirQueryResolver
 import com.google.android.fhir.search.search
 import com.google.android.fhir.sync.remote.HttpLogger
+import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
 
+@HiltAndroidApp
 class FhirApplication : Application(), DataCaptureConfig.Provider {
     // Only initiate the FhirEngine when used for the first time, not when the app is created.
     private val fhirEngine: FhirEngine by lazy { constructFhirEngine() }

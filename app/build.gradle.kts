@@ -3,6 +3,7 @@ plugins {
     id("kotlin-android")
     id("kotlin-kapt")
     id("androidx.navigation.safeargs.kotlin")
+    id("com.google.dagger.hilt.android")
 //    id("com.google.dagger.hilt.android")
 //    alias(libs.plugins.google.gms.google.services)
 //    id("com.google.firebase.crashlytics")
@@ -85,7 +86,7 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-//    androidTestImplementation(platform(libs.androidx.compose.bom))
+    androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
@@ -123,7 +124,8 @@ dependencies {
 
 //    ........................................end fhir...................................
     // Dagger Hilt
-    implementation("com.google.dagger:hilt-android:2.44")
+    implementation("com.google.dagger:hilt-android:2.52")
+    kapt("com.google.dagger:hilt-android-compiler:2.51.1")
     implementation("com.google.android.gms:play-services-auth:20.6.0")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
 
