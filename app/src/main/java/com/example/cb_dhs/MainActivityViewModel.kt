@@ -7,7 +7,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import androidx.work.Constraints
-import com.example.cb_dhs.data.DemoFhirSyncWorker
+import com.example.cb_dhs.fhir.data.DemoFhirSyncWorker
 import com.google.android.fhir.sync.CurrentSyncJobStatus
 import com.google.android.fhir.sync.PeriodicSyncConfiguration
 import com.google.android.fhir.sync.PeriodicSyncJobStatus

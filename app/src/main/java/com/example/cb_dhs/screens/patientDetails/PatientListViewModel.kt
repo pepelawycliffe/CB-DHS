@@ -44,6 +44,9 @@ class PatientListViewModel(application: Application, private val fhirEngine: Fhi
     val liveSearchedPatients = MutableLiveData<List<PatientItem>>()
     val patientCount = MutableLiveData<Long>()
 
+//    private val _liveServiceRequests = MutableLiveData<MutableList<ServiceRequestPatient>>()
+//    val liveServiceRequests: LiveData<MutableList<ServiceRequestPatient>> get() = _liveServiceRequests
+
     init {
         updatePatientListAndPatientCount({ getSearchResults() }, { count() })
     }

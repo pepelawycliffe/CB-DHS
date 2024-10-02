@@ -19,6 +19,20 @@
             android:id="@+id/action_loginFragment_to_home_fragment"
             app:destination="@id/home_fragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/referralsFragment"
+        android:name="com.example.cb_dhs.onMonday.ReferralsFragment"
+        android:label="fragment_referrals"
+        tools:layout="@layout/fragment_referrals">
+        <action
+            android:id="@+id/action_referralsFragment_to_activeReferralsFragment"
+            app:destination="@+id/activeReferralsFragment" />
+        <action
+            android:id="@+id/action_referralsFragment_pop"
+            app:popUpTo="@id/referralsFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.example.cb_dhs.screens.RegisterFragment"

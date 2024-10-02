@@ -28,7 +28,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.cb_dhs.databinding.PatientDetailsCardViewBinding
 import com.example.cb_dhs.databinding.PatientDetailsHeaderBinding
 import com.example.cb_dhs.databinding.PatientListItemViewBinding
-import com.example.cb_dhs.screens.patientDetails.PatientDetailsRecyclerViewAdapter.Companion.allCornersRounded
 import com.google.android.material.shape.MaterialShapeDrawable
 import com.google.android.material.shape.RoundedCornerTreatment
 import com.google.android.material.shape.ShapeAppearanceModel
@@ -179,18 +178,24 @@ abstract class PatientDetailItemViewHolder(v: View) : RecyclerView.ViewHolder(v)
 
 class PatientOverviewItemViewHolder(
     private val binding: PatientDetailsHeaderBinding,
+//    private val patientId: String,
     val onScreenerClick: () -> Unit,
 ) : PatientDetailItemViewHolder(binding.root) {
     override fun bind(data: PatientDetailData) {
         binding.screener.setOnClickListener { onScreenerClick() }
-        (data as PatientDetailOverview).let { binding.title.text = it.patient.name }
+        (data as PatientDetailOverview).let {
+            binding.title.text = it.patient.name
+            binding.id.text = it.patient.resourceId
+
+        }
+
         data.patient.riskItem?.let {
             binding.patientContainer.setBackgroundColor(it.patientCardColor)
-            binding.statusValue.text = it.riskStatus
-            binding.statusValue.setTextColor(Color.BLACK)
-            binding.statusValue.background =
-                allCornersRounded().apply { fillColor = ColorStateList.valueOf(it.riskStatusColor) }
-            binding.lastContactValue.text = it.lastContacted
+//            binding.statusValue.text = it.riskStatus
+//            binding.statusValue.setTextColor(Color.BLACK)
+//            binding.statusValue.background =
+//                allCornersRounded().apply { fillColor = ColorStateList.valueOf(it.riskStatusColor) }
+//            binding.lastContactValue.text = it.lastContacted
         }
     }
 }

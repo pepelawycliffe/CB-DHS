@@ -1,4 +1,4 @@
-package com.example.cb_dhs.data
+package com.example.cb_dhs.fhir.data
 
 import com.example.cb_dhs.fhir.DemoDataStore
 import com.google.android.fhir.sync.DownloadWorkManager

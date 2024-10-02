@@ -130,6 +130,11 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
 
 //    kapt("com.google.dagger:hilt-android-compiler:2.44")
+//    val fragment_version = "1.8.3"
+//
+//    debugImplementation("androidx.fragment:fragment-testing-manifest:$fragment_version")
+//
+//    androidTestImplementation("androidx.fragment:fragment-testing:$fragment_version")
 
 }
 
