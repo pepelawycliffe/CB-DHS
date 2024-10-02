@@ -1,0 +1,413 @@
+{
+  "resourceType": "Questionnaire",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-preferredTerminologyServer",
+      "valueUrl": "http://terminology.hl7.org/CodeSystem/admit-source"
+    }
+  ],
+  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-launchContext",
+  "version": "0.01",
+  "name": "Acknowledgement Form",
+  "title": "Acknowledgement Form",
+  "status": "active",
+  "publisher": "wycliffe pepela",
+  "description": "Acknowledgement Form for patient being referred",
+  "item": [
+    {
+      "type": "group",
+      "linkId": "1725397490018",
+      "text": "Acknowledgement Form",
+      "item": [
+        {
+          "item": [
+            {
+              "type": "string",
+              "linkId": "168895639407",
+              "text": "Name of Patient *",
+              "item": [
+                {
+                  "text": "John Doe",
+                  "type": "display",
+                  "linkId": "168895639407_helpText",
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "text": "Help-Button",
+                        "coding": [
+                          {
+                            "code": "help",
+                            "display": "Help-Button",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "date",
+              "linkId": "249258198795",
+              "text": "Date Patient Reported at Receiving Facility *",
+              "item": [
+                {
+                  "text": "23/06/2024",
+                  "type": "display",
+                  "linkId": "249258198795_helpText",
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "text": "Help-Button",
+                        "coding": [
+                          {
+                            "code": "help",
+                            "display": "Help-Button",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "integer",
+              "linkId": "755435076646",
+              "text": "Our TB Registration No. *",
+              "item": [
+                {
+                  "text": "12345",
+                  "type": "display",
+                  "linkId": "755435076646_helpText",
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "text": "Help-Button",
+                        "coding": [
+                          {
+                            "code": "help",
+                            "display": "Help-Button",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "integer",
+              "linkId": "323122083839",
+              "text": "Your TB Registration No. *",
+              "item": [
+                {
+                  "text": "56789",
+                  "type": "display",
+                  "linkId": "323122083839_helpText",
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "text": "Help-Button",
+                        "coding": [
+                          {
+                            "code": "help",
+                            "display": "Help-Button",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "string",
+              "linkId": "494141601044",
+              "text": "Name of Health Facility *",
+              "item": [
+                {
+                  "text": "Tanaka",
+                  "type": "display",
+                  "linkId": "494141601044_helpText",
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "text": "Help-Button",
+                        "coding": [
+                          {
+                            "code": "help",
+                            "display": "Help-Button",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "string",
+              "linkId": "424676680007",
+              "text": "Country *",
+              "item": [
+                {
+                  "text": "Kenya",
+                  "type": "display",
+                  "linkId": "424676680007_helpText",
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "text": "Help-Button",
+                        "coding": [
+                          {
+                            "code": "help",
+                            "display": "Help-Button",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "string",
+              "linkId": "617599595096",
+              "text": "Region/Province /County *",
+              "item": [
+                {
+                  "text": "Busia",
+                  "type": "display",
+                  "linkId": "617599595096_helpText",
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "text": "Help-Button",
+                        "coding": [
+                          {
+                            "code": "help",
+                            "display": "Help-Button",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "string",
+              "linkId": "126640193174",
+              "text": "District/ Sub county *",
+              "item": [
+                {
+                  "text": "Busia",
+                  "type": "display",
+                  "linkId": "126640193174_helpText",
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "text": "Help-Button",
+                        "coding": [
+                          {
+                            "code": "help",
+                            "display": "Help-Button",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "integer",
+              "linkId": "491604580778",
+              "text": "Telephone Number *",
+              "item": [
+                {
+                  "text": "0712345678",
+                  "type": "display",
+                  "linkId": "491604580778_helpText",
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "text": "Help-Button",
+                        "coding": [
+                          {
+                            "code": "help",
+                            "display": "Help-Button",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "string",
+              "linkId": "827350314422",
+              "text": "Contact Person *",
+              "item": [
+                {
+                  "text": "Jacob Doe",
+                  "type": "display",
+                  "linkId": "827350314422_helpText",
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "text": "Help-Button",
+                        "coding": [
+                          {
+                            "code": "help",
+                            "display": "Help-Button",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "string",
+              "linkId": "526264436986",
+              "text": "Designation *",
+              "item": [
+                {
+                  "text": "Designation",
+                  "type": "display",
+                  "linkId": "526264436986_helpText",
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "text": "Help-Button",
+                        "coding": [
+                          {
+                            "code": "help",
+                            "display": "Help-Button",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "string",
+              "linkId": "963768329470",
+              "text": "Email Contact *",
+              "item": [
+                {
+                  "text": "jacobdoe@gmail.com",
+                  "type": "display",
+                  "linkId": "963768329470_helpText",
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "text": "Help-Button",
+                        "coding": [
+                          {
+                            "code": "help",
+                            "display": "Help-Button",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "choice",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                        "code": "radio-button",
+                        "display": "Radio Button"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "365025838533",
+              "text": "Referral for PTLD *",
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "display": "Yes"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "display": "No"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "string",
+              "linkId": "961132982300",
+              "text": "Signature *",
+              "item": [
+                {
+                  "text": "jacobDoe",
+                  "type": "display",
+                  "linkId": "961132982300_helpText",
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "text": "Help-Button",
+                        "coding": [
+                          {
+                            "code": "help",
+                            "display": "Help-Button",
+                            "system": "http://hl7.org/fhir/questionnaire-item-control"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "type": "group",
+          "linkId": "381016422865"
+        }
+      ]
+    }
+  ]
+}
