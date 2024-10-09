@@ -816,6 +816,13 @@
                   }
                 }
               ]
+            },
+            {
+              "linkId": "patient-relationship-telecom",
+              "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.contact.telecom.value",
+              "required": true,
+              "text": "Telephone",
+              "type": "string"
             }
           ]
         }
