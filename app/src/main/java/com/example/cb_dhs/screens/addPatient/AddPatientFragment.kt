@@ -70,8 +70,10 @@ class AddPatientFragment : Fragment(R.layout.add_patient_fragment) {
         requireArguments()
             .putString(
                 QUESTIONNAIRE_FILE_PATH_KEY,
-//                "Acknowledgement-Form.json"
-                "new-patient-registration-paginated.json"
+
+//                "question.json"
+                "Patient-registration.R4.json"
+//                "new-patient-registration-paginated.json"
             )
 
     }
