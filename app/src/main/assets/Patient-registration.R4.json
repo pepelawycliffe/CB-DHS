@@ -148,7 +148,7 @@
                     }
                   ],
                   "linkId": "PR-name-family",
-                  "definition": "http://hl7.org/fhir/StructureDefinition/datatypes#HumanName.family",
+                  "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.name.family",
                   "type": "string",
                   "required": true,
                   "item": [
@@ -317,7 +317,7 @@
               "linkId": "identification-number",
               "type": "integer",
               "text": "Identification Number",
-              "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.identifier.value",
+              "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.Identifier.value",
               "required": true,
               "extension": [
                 {
@@ -492,7 +492,7 @@
           "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.address",
           "item": [
             {
-              "type": "choice",
+              "type": "string",
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
@@ -501,150 +501,48 @@
                     "expression": "Patient.address.country",
                     "name": "patientCountryOfOrigin"
                   }
-                },
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                        "code": "drop-down",
-                        "display": "Drop down"
-                      }
-                    ]
-                  }
                 }
               ],
               "linkId": "PR-address country",
               "text": "Country of Origin",
-              "required": true,
-              "answerOption": [
-                {
-                  "valueCoding": {
-                    "display": "Kenya",
-                    "code": "1",
-                    "system": "https://locationlist.com/countries"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "display": "Uganda",
-                    "code": "2",
-                    "system": "https://locationlist.com/countries"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "display": "Tanzania",
-                    "code": "3",
-                    "system": "https://locationlist.com/countries"
-                  }
-                }
-              ]
+              "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.address.country",
+              "required": true
             },
             {
-              "type": "choice",
+              "type": "string",
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                   "valueExpression": {
                     "language": "text/fhirpath",
-                    "expression": "Patient.address.countryOfResidence ",
+                    "expression": "Patient.address.country",
                     "name": "patientCountryOfResidence"
-                  }
-                },
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                        "code": "drop-down",
-                        "display": "Drop down"
-                      }
-                    ]
                   }
                 }
               ],
               "linkId": "296458511744",
               "text": "Country of Residence ",
               "required": true,
-              "answerOption": [
-                {
-                  "valueCoding": {
-                    "display": "Kenya",
-                    "code": "1",
-                    "system": "https://locationlist.com/countries"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "display": "Uganda",
-                    "code": "2",
-                    "system": "https://locationlist.com/countries"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "display": "Tanzania",
-                    "code": "3",
-                    "system": "https://locationlist.com/countries"
-                  }
-                }
-              ]
+              "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.address.country"
             },
             {
-              "type": "choice",
+              "type": "string",
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                   "valueExpression": {
                     "language": "text/fhirpath",
-                    "expression": "Patient.address.county ",
+                    "expression": "Patient.address.state",
                     "name": "patientCounty"
-                  }
-                },
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                        "code": "drop-down",
-                        "display": "Drop down"
-                      }
-                    ]
                   }
                 }
               ],
               "linkId": "979500918200",
               "text": "Region/Province/County ",
-              "answerOption": [
-                {
-                  "valueCoding": {
-                    "display": "Nairobi",
-                    "code": "1",
-                    "system": "https://locationlist.com/countries"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "display": "Mombasa",
-                    "code": "2",
-                    "system": "https://locationlist.com/countries"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "display": "Kisumu",
-                    "code": "3",
-                    "system": "https://locationlist.com/countries"
-                  }
-                }
-              ]
+              "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.address.state"
             },
             {
-              "type": "choice",
+              "type": "string",
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
@@ -653,90 +551,29 @@
                     "expression": "Patient.address.district",
                     "name": "patientDistrict"
                   }
-                },
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                        "code": "drop-down",
-                        "display": "Drop down"
-                      }
-                    ]
-                  }
                 }
               ],
               "linkId": "905412748016",
               "text": "Subcounty/District ",
               "required": true,
-              "answerOption": [
-                {
-                  "valueCoding": {
-                    "display": "Nairobi west",
-                    "code": "1",
-                    "system": "https://locationlist.com/countries"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "display": "Nairobi East",
-                    "code": "2",
-                    "system": "https://locationlist.com/countries"
-                  }
-                }
-              ]
+              "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.address.district"
             },
             {
-              "type": "choice",
+              "type": "string",
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
                   "valueExpression": {
                     "language": "text/fhirpath",
-                    "expression": "Patient.address.village",
+                    "expression": "Patient.address.city",
                     "name": "patientVillage"
-                  }
-                },
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                        "code": "drop-down",
-                        "display": "Drop down"
-                      }
-                    ]
                   }
                 }
               ],
               "linkId": "640472918531",
               "text": "Ward/Village",
               "required": true,
-              "answerOption": [
-                {
-                  "valueCoding": {
-                    "display": "Kasarani",
-                    "code": "1",
-                    "system": "https://locationlist.com/countries"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "display": "Langata",
-                    "code": "2",
-                    "system": "https://locationlist.com/countries"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "display": "Pangani",
-                    "code": "3",
-                    "system": "https://locationlist.com/countries"
-                  }
-                }
-              ]
+              "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.address.city"
             }
           ]
         }
