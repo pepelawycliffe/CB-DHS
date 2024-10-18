@@ -1,0 +1,797 @@
+{
+  "resourceType": "Questionnaire",
+  "title": "Refer Form",
+  "status": "active",
+  "publisher": "wycliffe Pepela",
+  "description": "Referral  Registration",
+  "subjectType": [
+    "Patient"
+  ],
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
+      "valueExpression": {
+        "language": "application/x-fhir-query",
+        "expression": "Patient",
+        "name": "patient"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/questionnaire-item-control",
+            "code": "page",
+            "display": "Page"
+          }
+        ],
+        "text": "Page"
+      }
+    }
+  ],
+  "item": [
+    {
+      "text": "",
+      "type": "group",
+      "linkId": "1.0.0",
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "page",
+                "display": "Page"
+              }
+            ],
+            "text": "Page"
+          }
+        }
+      ],
+      "item": [
+        {
+          "linkId": "PR-referring-facility-info",
+          "type": "group",
+          "text": "Referring Facility Info",
+          "item": [
+            {
+              "linkId": "referral-0-birth-date",
+              "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.birthDate",
+              "type": "date",
+              "text": "Date of Referral ",
+              "required": true,
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "Patient.birthDate",
+                    "name": "patientBirthDate"
+                  }
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+                  "valueDate": {
+                    "extension": [
+                      {
+                        "url": "http://hl7.org/fhir/StructureDefinition/cqf-calculatedValue",
+                        "valueExpression": {
+                          "language": "text/fhirpath",
+                          "expression": "today()"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "name-of-referring-facility",
+              "type": "string",
+              "definition": "http://hl7.org/fhir/StructureDefinition/Organization#Organization-name",
+              "text": "Name of Referring Facility ",
+              "required": true
+            },
+            {
+              "linkId": "patient-title",
+              "type": "choice",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                        "code": "drop-down",
+                        "display": "Drop down"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "text": "Title",
+              "definition": "http://hl7.org/fhir/StructureDefinition/ValueSet#ValueSet.title",
+              "required": true,
+              "answerOption": [
+                {
+                  "definition": "http://hl7.org/fhir/StructureDefinition/ValueSet#ValueSet.title",
+                  "valueCoding": {
+                    "display": "Mr"
+                  }
+                },
+                {
+                  "definition": "http://hl7.org/fhir/StructureDefinition/ValueSet#ValueSet.title",
+                  "valueCoding": {
+                    "display": "Mrs"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "Practitioner-name",
+              "type": "string",
+              "definition": "http://hl7.org/fhir/StructureDefinition/Practitioner#Practitioner.name.given",
+              "text": "Name of Referring Officer ",
+              "required": true
+            },
+            {
+              "linkId": "Patient-phone-number",
+              "type": "string",
+              "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.telecom.value",
+              "text": "Telephone",
+              "required": true
+            },
+            {
+              "linkId": "PR-telecom-email",
+              "type": "group",
+              "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.telecom",
+              "item": [
+                {
+                  "linkId": "PR-telecom-system",
+                  "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.telecom.system",
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": true
+                    }
+                  ],
+                  "type": "string",
+                  "text": "system",
+                  "initial": [
+                    {
+                      "valueString": "email"
+                    }
+                  ]
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%client.telecom.value",
+                        "name": "patientTelecom"
+                      }
+                    }
+                  ],
+                  "linkId": "individual-email",
+                  "type": "string",
+                  "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.telecom.value",
+                  "text": "Email",
+                  "required": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "",
+      "type": "group",
+      "linkId": "2.0.0",
+      "item": [
+        {
+          "type": "group",
+          "linkId": "Referral-Info",
+          "text": "Referral Info",
+          "item": [
+            {
+              "linkId": "reason-for-referral",
+              "type": "choice",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                        "code": "drop-down",
+                        "display": "Drop down"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "text": "Reason for Referral ",
+              "definition": "http://hl7.org/fhir/StructureDefinition/ReferralRequest#ReferralRequest.reasonCode",
+              "required": true,
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "display": "leave"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "Expected-date-of-return",
+              "type": "date",
+              "definition": "http://hl7.org/fhir/StructureDefinition/ReferralRequest#ReferralRequest.authoredOn",
+              "text": "Expected date of return ",
+              "required": true,
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "Patient.birthDate",
+                    "name": "patientBirthDate"
+                  }
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+                  "valueDate": {
+                    "extension": [
+                      {
+                        "url": "http://hl7.org/fhir/StructureDefinition/cqf-calculatedValue",
+                        "valueExpression": {
+                          "language": "text/fhirpath",
+                          "expression": "today()"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "",
+      "type": "group",
+      "linkId": "3.0.0",
+      "item": [
+        {
+          "type": "group",
+          "linkId": "clinical-info-section 1",
+          "text": "Clinical Info Section 1",
+          "item": [
+            {
+              "linkId": "TB-Registration-number",
+              "type": "integer",
+              "definition": "http://hl7.org/fhir/StructureDefinition/Condition#Condition.code",
+              "text": "TB Registration number ",
+              "required": true
+            },
+            {
+              "linkId": "TB-registration-date",
+              "type": "date",
+              "definition": "http://hl7.org/fhir/StructureDefinition/Condition#onset#Condition.assertedDate",
+              "text": "TB Registration Date *",
+              "required": true,
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "Condition.assertedDate",
+                    "name": "conditionAssertedDate"
+                  }
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+                  "valueDate": {
+                    "extension": [
+                      {
+                        "url": "http://hl7.org/fhir/StructureDefinition/cqf-calculatedValue",
+                        "valueExpression": {
+                          "language": "text/fhirpath",
+                          "expression": "today()"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "type": "choice",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                        "code": "radio-button",
+                        "display": "Radio Button"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "284135173625",
+              "text": "Type of Patient ",
+              "required": true,
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "display": "New"
+                  },
+                  "initialSelected": true
+                },
+                {
+                  "valueCoding": {
+                    "display": "Previously Treated"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "choice",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                        "code": "drop-down",
+                        "display": "Drop down"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "920072181987",
+              "text": "Type of TB ",
+              "required": true,
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "display": "DSTB"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "display": "CBTB"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "",
+      "type": "group",
+      "linkId": "4.0.0",
+      "item": [
+        {
+          "linkId": "clinical-info-section-2",
+          "item": [
+            {
+              "linkId": "conditionDefinition-status",
+              "type": "choice",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                        "code": "drop-down",
+                        "display": "Drop down"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "text": "HIV Status *",
+              "definition": "http://hl7.org/fhir/StructureDefinition/ConditionDefinition#ConditionDefinition.status",
+              "required": true,
+              "answerOption": [
+                {
+                  "definition": "http://hl7.org/fhir/StructureDefinition/ConditionDefinition#ConditionDefinition.status",
+                  "valueCoding": {
+                    "display": "Negative"
+                  },
+                  "initialSelected": true
+                },
+                {
+                  "definition": "http://hl7.org/fhir/StructureDefinition/ConditionDefinition#ConditionDefinition.status",
+                  "valueCoding": {
+                    "display": "Positive"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "choice",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                        "code": "drop-down",
+                        "display": "Drop down"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "360088367878",
+              "text": "ART Regimen ",
+              "required": true,
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "display": "ART Regimen"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "CD4-count",
+              "type": "choice",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                        "code": "drop-down",
+                        "display": "Drop down"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.referenceRange",
+              "text": "CD4 count ",
+              "required": true,
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "display": "CD4 count *"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "viral-load",
+              "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.referenceRange",
+              "type": "choice",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                        "code": "drop-down",
+                        "display": "Drop down"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "text": "Viral Load ",
+              "required": true,
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "display": "Viral Load *"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "radiological-information",
+              "type": "string",
+              "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.value",
+              "text": "Radiological information ",
+              "required": true
+            },
+            {
+              "linkId": "TB-treatment-initiation-date",
+              "type": "date",
+              "definition": "http://hl7.org/fhir/StructureDefinition/MedicationAdministration#MedicationAdministration.occurence",
+              "text": "TB treatment initiation date ",
+              "required": true
+            },
+            {
+              "type": "choice",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                        "code": "drop-down",
+                        "display": "Drop down"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "775634329916",
+              "text": "Regimen ",
+              "required": true,
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "display": "Regimen *"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "Drugs-issued-for",
+              "definition": "http://hl7.org/fhir/StructureDefinition/MedicationStatement#MedicationStatement.effective",
+              "type": "choice",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                        "code": "drop-down",
+                        "display": "Drop down"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "text": "Drugs issued for ",
+              "required": true,
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "display": "3 months"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "display": "6 months"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "month-of-treatment",
+              "definition": "http://hl7.org/fhir/StructureDefinition/MedicationStatement#MedicationStatement.effective",
+              "type": "choice",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                        "code": "drop-down",
+                        "display": "Drop down"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "text": "Month of Treatment ",
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "display": "April"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "display": "May"
+                  }
+                }
+              ]
+            }
+          ],
+          "type": "group",
+          "text": "Clinical Info Section 2"
+        }
+      ]
+    },
+    {
+      "text": "",
+      "type": "group",
+      "linkId": "5.0.0",
+      "item": [
+        {
+          "type": "group",
+          "linkId": "clinical-info-section-3",
+          "text": "Clinical Info Section 3",
+          "item": [
+            {
+              "linkId": "test-type",
+              "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.instantiates",
+              "type": "choice",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                        "code": "drop-down",
+                        "display": "Drop down"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "text": "Test Type",
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "display": "GXP"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "display": "BXP"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "Observation-result",
+              "type": "string",
+              "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.value",
+              "text": "Results"
+            },
+            {
+              "linkId": "Observation-date",
+              "type": "date",
+              "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.effective",
+              "text": "Date"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "",
+      "type": "group",
+      "linkId": "6.0.0",
+      "item": [
+        {
+          "linkId": "clinical-info-section 4",
+          "type": "group",
+          "text": "Clinical Info Section 4",
+          "item": [
+            {
+              "linkId": "Medication-code",
+              "definition": "http://hl7.org/fhir/StructureDefinition/Medication#Medication.code",
+              "type": "choice",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                        "code": "drop-down",
+                        "display": "Drop down"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "text": "Drug",
+              "answerOption": [
+                {
+                  "definition": "http://hl7.org/fhir/StructureDefinition/Medication#Medication.code",
+                  "valueCoding": {
+                    "display": "generic code"
+                  }
+                },
+                {
+                  "definition": "http://hl7.org/fhir/StructureDefinition/Medication#Medication.code",
+                  "valueCoding": {
+                    "display": "Others"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "Medication-identifier",
+              "definition": "http://hl7.org/fhir/StructureDefinition/Medication#Medication.identifier.value",
+              "type": "string",
+              "text": "Specify Drug"
+            },
+            {
+              "linkId": "Observation-value result",
+              "type": "string",
+              "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.value",
+              "text": "Result"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "",
+      "type": "group",
+      "linkId": "7.0.0",
+      "item": [
+        {
+          "linkId": "clinical-info-section-5",
+          "type": "group",
+          "text": "Clinical Info Section 5",
+          "item": [
+            {
+              "linkId": "Month",
+              "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.effective",
+              "type": "choice",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                        "code": "drop-down",
+                        "display": "Drop down"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "text": "Month",
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "display": "2 Months"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "display": "3 Months"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "Smear-result",
+              "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.value",
+              "type": "string",
+              "text": "Smear Result"
+            },
+            {
+              "linkId": "GXP-result",
+              "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.value",
+              "type": "string",
+              "text": "GXP Result"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
