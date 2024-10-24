@@ -7,6 +7,7 @@
   "subjectType": [
     "Patient"
   ],
+
   "extension": [
     {
       "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
@@ -90,7 +91,7 @@
             {
               "linkId": "name-of-referring-facility",
               "type": "string",
-              "definition": "http://hl7.org/fhir/StructureDefinition/Organization#Organization-name",
+              "definition": "http://hl7.org/fhir/StructureDefinition/Organization#Organization.name",
               "text": "Name of Referring Facility ",
               "required": true
             },
