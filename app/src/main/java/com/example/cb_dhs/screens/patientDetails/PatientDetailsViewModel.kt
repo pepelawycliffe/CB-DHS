@@ -113,7 +113,8 @@ class PatientDetailsViewModel(
             .toPatientItem(0)
             .apply { riskItem = riskAssessment }
             .let { patientItem ->
-                add(PatientDetailOverview(patientItem, firstInGroup = true))
+                add(PatientDetailOverview(patientItem, firstInGroup = false))
+
                 add(
                     PatientDetailProperty(
                         PatientProperty(
