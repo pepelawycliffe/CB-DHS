@@ -117,24 +117,32 @@ class PatientDetailsViewModel(
                 add(
                     PatientDetailProperty(
                         PatientProperty(
-                            getString(R.string.patient_property_mobile),
-                            patientItem.phone
+                            "Fist Name",
+                            patientItem.first
                         ),
                     ),
                 )
                 add(
                     PatientDetailProperty(
                         PatientProperty(
-                            getString(R.string.patient_property_id),
-                            patientItem.resourceId
+                            "Middle Name",
+                            patientItem.middle
                         ),
                     ),
                 )
                 add(
                     PatientDetailProperty(
                         PatientProperty(
-                            getString(R.string.patient_property_address),
-                            "${patientItem.city}, ${patientItem.country} ",
+                            "Last Name",
+                            patientItem.family
+                        ),
+                    ),
+                )
+                add(
+                    PatientDetailProperty(
+                        PatientProperty(
+                            " Nickname",
+                            patientItem.nick
                         ),
                     ),
                 )
@@ -142,7 +150,24 @@ class PatientDetailsViewModel(
                     PatientDetailProperty(
                         PatientProperty(
                             getString(R.string.patient_property_dob),
-                            patientItem.dob?.localizedString ?: "",
+                            patientItem.dob.toString()
+                        ),
+                    ),
+                )
+                add(
+                    PatientDetailProperty(
+                        PatientProperty(
+                            "  Months",
+//                            patientItem.dob?.dayOfMonth.toString(),
+                            patientItem.dob?.monthValue.toString(),
+                        ),
+                    ),
+                )
+                add(
+                    PatientDetailProperty(
+                        PatientProperty(
+                            " Years",
+                            patientItem.dob?.year.toString(),
                         ),
                     ),
                 )
@@ -157,6 +182,115 @@ class PatientDetailsViewModel(
                         lastInGroup = true,
                     ),
                 )
+                add(
+                    PatientDetailProperty(
+                        PatientProperty(
+                            " Telephone",
+                            patientItem.phone
+                        ),
+                    ),
+                )
+                add(
+                    PatientDetailProperty(
+                        PatientProperty(
+                            " Identification Document",
+                            patientItem.resourceId
+                        ),
+                    ),
+                )
+                add(
+                    PatientDetailProperty(
+                        PatientProperty(
+                            "Identification Number",
+                            patientItem.resourceId
+                        ),
+                    ),
+                )
+                add(
+                    PatientDetailProperty(
+                        PatientProperty(
+                            "country Of Origin",
+                            patientItem.countryOfOrigin
+                        ),
+                    ),
+                )
+                add(
+                    PatientDetailProperty(
+                        PatientProperty(
+                            "country Of Residence",
+                            patientItem.countryOfResidence
+                        ),
+                    ),
+                )
+                add(
+                    PatientDetailProperty(
+                        PatientProperty(
+                            "county",
+                            patientItem.county
+                        ),
+                    ),
+                )
+                add(
+                    PatientDetailProperty(
+                        PatientProperty(
+                            "ward",
+                            patientItem.ward
+                        ),
+                    ),
+                )
+
+
+//                add(
+//                    PatientDetailProperty(
+//                        PatientProperty(
+//                            getString(R.string.patient_property_mobile),
+//                            patientItem.phone
+//                        ),
+//                    ),
+//                )
+//                add(
+//                    PatientDetailProperty(
+//                        PatientProperty(
+//                            getString(R.string.patient_property_id),
+//                            patientItem.resourceId
+//                        ),
+//                    ),
+//                )
+////                add(
+////                    PatientDetailProperty(
+////                        PatientProperty(
+////                            getString(R.string.patient_property_address),
+////                            "${patientItem.city}, ${patientItem.country} ",
+////                        ),
+////                    ),
+////                )
+//                add(
+//                    PatientDetailProperty(
+//                        PatientProperty(
+//                            getString(R.string.patient_property_address),
+//                            "${patientItem.countryOfOrigin}, ${patientItem.countryOfResidence},${patientItem.county} ,${patientItem.ward}",
+//                        ),
+//                    ),
+//                )
+//                add(
+//                    PatientDetailProperty(
+//                        PatientProperty(
+//                            getString(R.string.patient_property_dob),
+//                            patientItem.dob?.localizedString ?: "",
+//                        ),
+//                    ),
+//                )
+//                add(
+//                    PatientDetailProperty(
+//                        PatientProperty(
+//                            getString(R.string.patient_property_gender),
+//                            patientItem.gender.replaceFirstChar {
+//                                if (it.isLowerCase()) it.titlecase(Locale.ROOT) else it.toString()
+//                            },
+//                        ),
+//                        lastInGroup = true,
+//                    ),
+//                )
             }
     }
 

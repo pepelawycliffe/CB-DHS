@@ -133,14 +133,34 @@ class PatientListViewModel(application: Application, private val fhirEngine: Fhi
     data class PatientItem(
         val id: String,
         val resourceId: String,
+//        val resourceIdType: String,
         val name: String,
+        val first: String,
+        val middle: String,
+        val family: String,
+        val nick: String,
         val gender: String,
         val dob: LocalDate? = null,
         val phone: String,
-        val city: String,
-        val country: String,
-        val isActive: Boolean,
-        val html: String,
+//        Address
+        val countryOfOrigin: String,
+        val countryOfResidence: String,
+        val county: String,
+        val subCounty: String,
+        val ward: String,
+//        Address end
+//        val city: String,
+//        val country: String,
+
+
+//        Next of kin
+//        val fullName: String,
+//        val Relationship: String,
+//        val kinPhone: String,
+//        end of next of kin
+
+//        val isActive: Boolean,
+//        val html: String,
         var risk: String? = "",
         var riskItem: RiskAssessmentItem? = null,
     ) {
@@ -183,7 +203,13 @@ class PatientListViewModel(application: Application, private val fhirEngine: Fhi
 internal fun Patient.toPatientItem(position: Int): PatientListViewModel.PatientItem {
     // Show nothing if no values available for gender and date of birth.
     val patientId = if (hasIdElement()) idElement.idPart else ""
-    val name = if (hasName()) name[0].nameAsSingleString else ""
+//    val patientIdType =  if (hasIdElement()) typeElement else ""
+    val givenName = if (hasName()) name[0].givenAsSingleString else ""
+    val middleName = if (hasName()) name[0].givenAsSingleString else ""
+    val familyName = if (hasName()) name[0].family else ""
+    val nickName = if (hasName()) name[0].givenAsSingleString else ""
+
+//    val givenName = if (hasName()) name[0].nameAsSingleString else ""
     val gender = if (hasGenderElement()) genderElement.valueAsString else ""
     val dob =
         if (hasBirthDateElement()) {
@@ -191,22 +217,53 @@ internal fun Patient.toPatientItem(position: Int): PatientListViewModel.PatientI
         } else {
             null
         }
+//    val phone = if (hasTelecom()) telecom[0].value else ""
+//    val city = if (hasAddress()) address[0].city else ""
+//    val country = if (hasAddress()) address[0].country else ""
+//    val isActive = active
+//    val html: String = if (hasText()) text.div.valueAsString else ""
     val phone = if (hasTelecom()) telecom[0].value else ""
-    val city = if (hasAddress()) address[0].city else ""
-    val country = if (hasAddress()) address[0].country else ""
-    val isActive = active
-    val html: String = if (hasText()) text.div.valueAsString else ""
+    val countryOfOrigin = if (hasAddress()) address[0].country else ""
+    val countryOfResidence = if (hasAddress()) address[0].country else ""
+    val county = if (hasAddress()) address[0].district else ""
+    val subCounty = if (hasAddress()) address[0].state else ""
+    val ward = if (hasAddress()) address[0].city else ""
+//    val isActive = active
+//    val html: String = if (hasText()) text.div.valueAsString else ""
+    val name = if (hasName()) name[0].nameAsSingleString else ""
 
+//    return PatientListViewModel.PatientItem(
+//        id = position.toString(),
+//        resourceId = patientId,
+//        name = name,
+//        gender = gender ?: "",
+//        dob = dob,
+//        phone = phone ?: "",
+//        city = city ?: "",
+//        country = country ?: "",
+//        isActive = isActive,
+//        html = html,
+//    )
     return PatientListViewModel.PatientItem(
         id = position.toString(),
         resourceId = patientId,
+//        resourceIdType = patientIdType.toString(),
+        first = givenName,
         name = name,
+        middle = middleName,
+        family = familyName,
+        nick = nickName,
         gender = gender ?: "",
         dob = dob,
         phone = phone ?: "",
-        city = city ?: "",
-        country = country ?: "",
-        isActive = isActive,
-        html = html,
+        countryOfOrigin = countryOfOrigin ?: "",
+        countryOfResidence = countryOfResidence ?: "",
+        county = county ?: "",
+        subCounty = subCounty ?: "",
+        ward = ward ?: ""
+//        isActive = isActive,
+//        html = html,
+
+
     )
 }

@@ -37,6 +37,7 @@ class PatientItemViewHolder(binding: PatientListItemViewBinding) :
         onItemClicked: (PatientListViewModel.PatientItem) -> Unit,
     ) {
         this.nameView.text = patientItem.name
+//        this.nameView.text = patientItem.given
         this.ageView.text = getFormattedAge(patientItem, ageView.context.resources)
         this.idView.text = "Id: #---${getTruncatedId(patientItem)}"
         this.itemView.setOnClickListener { onItemClicked(patientItem) }

@@ -95,7 +95,8 @@
                             android:textAllCaps="false"
                             app:cornerRadius="20dp"
                             app:strokeColor="@color/onSecondary_blue_20"
-                            app:strokeWidth="2dp" />
+                            app:strokeWidth="2dp"
+                            tools:ignore="HardcodedText" />
                     </RelativeLayout>
                 </LinearLayout>
 

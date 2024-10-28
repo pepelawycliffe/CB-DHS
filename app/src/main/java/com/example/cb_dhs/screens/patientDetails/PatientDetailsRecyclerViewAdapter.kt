@@ -184,6 +184,7 @@ class PatientOverviewItemViewHolder(
     override fun bind(data: PatientDetailData) {
         binding.screener.setOnClickListener { onScreenerClick() }
         (data as PatientDetailOverview).let {
+//            binding.title.text = it.patient.given
             binding.title.text = it.patient.name
             binding.id.text = it.patient.resourceId
 
