@@ -1,0 +1,832 @@
+{
+  "resourceType": "Questionnaire",
+  "title": "Patient registration",
+  "status": "active",
+  "publisher": "wycliffe pepela",
+  "description": "Patient Registration",
+  "subjectType": [
+    "Patient"
+  ],
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
+      "valueExpression": {
+        "language": "application/x-fhir-query",
+        "expression": "Patient",
+        "name": "patient"
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/questionnaire-item-control",
+            "code": "page",
+            "display": "Page"
+          }
+        ],
+        "text": "Page"
+      }
+    }
+  ],
+  "item": [
+    {
+      "text": "",
+      "type": "group",
+      "linkId": "1.0.0",
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                "code": "page",
+                "display": "Page"
+              }
+            ],
+            "text": "Page"
+          }
+        }
+      ],
+      "item": [
+        {
+          "linkId": "PR",
+          "type": "group",
+          "text": "Demographics",
+          "item": [
+            {
+              "linkId": "PR-name",
+              "type": "group",
+              "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.name",
+              "item": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "Patient.name.given",
+                        "name": "patientName"
+                      }
+                    }
+                  ],
+                  "linkId": "PR-name-text",
+                  "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.name.given",
+                  "type": "string",
+                  "required": true,
+                  "item": [
+                    {
+                      "linkId": "firstname",
+                      "text": "First Name *",
+                      "type": "display",
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                                "code": "flyover",
+                                "display": "Fly-over"
+                              }
+                            ],
+                            "text": "Flyover"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "Patient.name.given",
+                        "name": "patientName"
+                      }
+                    }
+                  ],
+                  "linkId": "PR-name-middle",
+                  "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.name.given",
+                  "type": "string",
+                  "item": [
+                    {
+                      "linkId": "middle-name",
+                      "text": "Middle Name",
+                      "type": "display",
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                                "code": "flyover",
+                                "display": "Fly-over"
+                              }
+                            ],
+                            "text": "Flyover"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "Patient.name.family",
+                        "name": "patientFamily"
+                      }
+                    }
+                  ],
+                  "linkId": "PR-name-family",
+                  "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.name.family",
+                  "type": "string",
+                  "required": true,
+                  "item": [
+                    {
+                      "linkId": "last-name",
+                      "text": "Last Name *",
+                      "type": "display",
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                                "code": "flyover",
+                                "display": "Fly-over"
+                              }
+                            ],
+                            "text": "Flyover"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "Patient.name.given",
+                        "name": "patientName"
+                      }
+                    }
+                  ],
+                  "linkId": "PR-name-nick",
+                  "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.name.given",
+                  "type": "string",
+                  "item": [
+                    {
+                      "linkId": "nick-name",
+                      "text": "Nick Name",
+                      "type": "display",
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                          "valueCodeableConcept": {
+                            "coding": [
+                              {
+                                "system": "http://hl7.org/fhir/questionnaire-item-control",
+                                "code": "flyover",
+                                "display": "Fly-over"
+                              }
+                            ],
+                            "text": "Flyover"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "linkId": "PR-telecom",
+              "type": "group",
+              "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.telecom",
+              "item": [
+                {
+                  "linkId": "PR-telecom-system",
+                  "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.telecom.system",
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+                      "valueBoolean": true
+                    }
+                  ],
+                  "type": "string",
+                  "text": "system",
+                  "initial": [
+                    {
+                      "valueString": "phone"
+                    }
+                  ]
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                      "valueExpression": {
+                        "language": "text/fhirpath",
+                        "expression": "%client.telecom.value",
+                        "name": "patientTelecom"
+                      }
+                    }
+                  ],
+                  "linkId": "PR-telecom-value",
+                  "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.telecom.value",
+                  "type": "string",
+                  "required": true,
+                  "text": "Phone Number"
+                }
+              ]
+            },
+            {
+              "linkId": "patient-identify-type",
+              "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.identifier.type",
+              "type": "choice",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                  "valueExpression": {
+                    "system": "http://hl7.org/fhir/administrative-identifier",
+                    "language": "text/fhirpath",
+                    "expression": "Patient.identifier.type",
+                    "name": "patientIdentifier"
+                  }
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                        "code": "drop-down",
+                        "display": "Drop down"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "text": "Identification Type",
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "system": "http://hl7.org/fhir/administrative-identifier",
+                    "code": "birthcertificate",
+                    "display": "Birth Certificate"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "system": "http://hl7.org/fhir/administrative-identifier",
+                    "code": "nationalId",
+                    "display": "National ID"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "system": "http://hl7.org/fhir/administrative-identifier",
+                    "code": "passport",
+                    "display": "Passport"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "system": "http://hl7.org/fhir/administrative-identifier",
+                    "code": "bNo",
+                    "display": "Birth Notification Number"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "identification-number",
+              "type": "integer",
+              "text": "Identification Number",
+              "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.identifier.value",
+              "required": true,
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "Patient.identifier.value",
+                    "name": "patientIdentification"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "patient-0-gender",
+              "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.gender",
+              "type": "choice",
+              "text": "Sex *",
+              "required": true,
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                  "valueExpression": {
+                    "system": "http://hl7.org/fhir/administrative-gender",
+                    "language": "text/fhirpath",
+                    "expression": "Patient.gender",
+                    "name": "patientGender"
+                  }
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                  "valueCode": "horizontal"
+                }
+              ],
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "system": "http://hl7.org/fhir/administrative-gender",
+                    "code": "male",
+                    "display": "Male"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "system": "http://hl7.org/fhir/administrative-gender",
+                    "code": "female",
+                    "display": "Female"
+                  }
+                }
+              ]
+            },
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "Patient.birthDate",
+                    "name": "patientBirthDate"
+                  }
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+                  "valueDate": {
+                    "extension": [
+                      {
+                        "url": "http://hl7.org/fhir/StructureDefinition/cqf-calculatedValue",
+                        "valueExpression": {
+                          "language": "text/fhirpath",
+                          "expression": "today()"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "type": "group",
+              "linkId": "patient-0-birth-date",
+              "text": "Date of Birth",
+              "required": true,
+              "item": [
+                {
+                  "item": [
+                    {
+                      "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.birthDate",
+                      "type": "date",
+                      "linkId": "patient-0-birth-date",
+                      "text": "Date of Birth",
+                      "enableWhen": [
+                        {
+                          "question": "248565229818",
+                          "operator": "=",
+                          "answerCoding": {
+                            "display": "Accurate"
+                          }
+                        }
+                      ],
+                      "enableBehavior": "all",
+                      "required": true
+                    },
+                    {
+                      "item": [
+                        {
+                          "type": "integer",
+                          "linkId": "371556442578",
+                          "text": "Years"
+                        },
+                        {
+                          "type": "integer",
+                          "linkId": "851449842923",
+                          "text": "Months"
+                        }
+                      ],
+                      "type": "group",
+                      "linkId": "349859588329",
+                      "text": "Date of Birth",
+                      "enableWhen": [
+                        {
+                          "question": "248565229818",
+                          "operator": "=",
+                          "answerCoding": {
+                            "display": "Estimated"
+                          }
+                        }
+                      ],
+                      "enableBehavior": "all"
+                    }
+                  ],
+                  "type": "choice",
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "http://hl7.org/fhir/questionnaire-item-control",
+                            "code": "radio-button",
+                            "display": "Radio Button"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
+                      "valueCode": "horizontal"
+                    }
+                  ],
+                  "linkId": "248565229818",
+                  "answerOption": [
+                    {
+                      "valueCoding": {
+                        "display": "Accurate"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "display": "Estimated"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "item": [
+        {
+          "linkId": "PR-address",
+          "type": "group",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.address",
+          "item": [
+            {
+              "type": "choice",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "Patient.address.country",
+                    "name": "patientCountryOfOrigin"
+                  }
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                        "code": "drop-down",
+                        "display": "Drop down"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "PR-address country",
+              "text": "Country of Origin",
+              "required": true,
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "display": "Kenya",
+                    "code": "1",
+                    "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.address.country"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "display": "Uganda",
+                    "code": "2",
+                    "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.address.country"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "display": "Tanzania",
+                    "code": "3",
+                    "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.address.country"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "choice",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "Patient.address.country",
+                    "name": "patientCountryOfResidence"
+                  }
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                        "code": "drop-down",
+                        "display": "Drop down"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "296458511744",
+              "text": "Country of Residence ",
+              "required": true,
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "display": "Kenya",
+                    "code": "1",
+                    "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.address.country"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "display": "Uganda",
+                    "code": "2",
+                    "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.address.country"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "display": "Tanzania",
+                    "code": "3",
+                    "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.address.country"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "choice",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "Patient.address.state",
+                    "name": "patientCounty"
+                  }
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                        "code": "drop-down",
+                        "display": "Drop down"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "979500918200",
+              "text": "Region/Province/County ",
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "display": "Nairobi",
+                    "code": "1",
+                    "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.address.state"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "display": "Mombasa",
+                    "code": "2",
+                    "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.address.state"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "display": "Kisumu",
+                    "code": "3",
+                    "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.address.state"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "choice",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "Patient.address.district",
+                    "name": "patientDistrict"
+                  }
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                        "code": "drop-down",
+                        "display": "Drop down"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "905412748016",
+              "text": "Subcounty/District ",
+              "required": true,
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "display": "Nairobi west",
+                    "code": "1",
+                    "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.address.district"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "display": "Nairobi East",
+                    "code": "2",
+                    "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.address.district"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "choice",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "Patient.address.city",
+                    "name": "patientVillage"
+                  }
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                        "code": "drop-down",
+                        "display": "Drop down"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "640472918531",
+              "text": "Ward/Village",
+              "required": true,
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "display": "Kasarani",
+                    "code": "1",
+                    "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.address.city"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "display": "Langata",
+                    "code": "2",
+                    "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.address.city"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "display": "Pangani",
+                    "code": "3",
+                    "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.address.city"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "type": "group",
+      "linkId": "950052992901",
+      "text": "Address"
+    },
+    {
+      "linkId": "PR-caregivers",
+      "type": "group",
+      "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.contact",
+      "text": "Next of Kin",
+      "item": [
+        {
+          "linkId": "patient-contact-name",
+          "type": "group",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.contact.name",
+          "item": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "Patient.contact.name.text",
+                    "name": "patientContactName"
+                  }
+                }
+              ],
+              "linkId": "patient-contact-name",
+              "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.contact.name.text",
+              "type": "string",
+              "text": "Full Name ",
+              "required": true
+            },
+            {
+              "linkId": "patient-relationship",
+              "type": "choice",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                        "code": "drop-down",
+                        "display": "Drop down"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "text": "Relationship ",
+              "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.contact.relationship",
+              "required": true,
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "system": "http://hl7.org/fhir/ValueSet/patient-contactrelationship",
+                    "code": "fatherId",
+                    "display": "Father"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "system": "http://hl7.org/fhir/ValueSet/patient-contactrelationship",
+                    "code": "motherId",
+                    "display": "Mother"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "system": "http://hl7.org/fhir/administrative-gender",
+                    "code": "guardianId",
+                    "display": "Guardian"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "patient-relationship-telecom",
+              "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.contact.telecom.value",
+              "required": true,
+              "text": "Telephone",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
