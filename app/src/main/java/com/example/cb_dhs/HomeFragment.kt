@@ -18,7 +18,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         //        val navController = findNavController(R.id.nav_host_fragment)
 
-
 //        val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottomNavigationView)
 //        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
 //            when (item.itemId) {
@@ -66,9 +65,10 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         requireView().findViewById<CardView>(R.id.item_search).setOnClickListener {
             findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToPatientList())
         }
-//        requireView().findViewById<CardView>(R.id.item_new_referral).setOnClickListener {
-//            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToPatientList())
-//        }
+        requireView().findViewById<CardView>(R.id.item_new_referral).setOnClickListener {
+            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToAddReferralFragment())
+        }
+
     }
 
 
