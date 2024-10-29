@@ -66,7 +66,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToPatientList())
         }
         requireView().findViewById<CardView>(R.id.item_new_referral).setOnClickListener {
-            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToAddReferralFragment())
+            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToReferralsFragment3())
         }
 
     }
