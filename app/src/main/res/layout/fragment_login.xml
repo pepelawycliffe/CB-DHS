@@ -21,7 +21,8 @@
             android:text="Login"
             android:textColor="@color/white"
             android:textSize="36sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -30,7 +31,8 @@
             android:layout_marginTop="10dp"
             android:text="Enter Facility ID and Password"
             android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            tools:ignore="HardcodedText" />
 
     </LinearLayout>
     <LinearLayout
@@ -46,7 +48,7 @@
             android:layout_marginTop="10dp"
             android:scaleType="centerCrop"
             android:src="@drawable/logo"
-            tools:ignore="MissingConstraints"
+            tools:ignore="ContentDescription,MissingConstraints"
             tools:layout_editor_absoluteX="160dp"
             tools:layout_editor_absoluteY="165dp" />
 
@@ -101,7 +103,8 @@
             app:layout_constraintTop_toBottomOf="@+id/login_email"
             app:passwordToggleEnabled="true"
             app:startIconDrawable="@drawable/password"
-            app:startIconTint="@color/onPrimary_blue_20">
+            app:startIconTint="@color/onPrimary_blue_20"
+            tools:ignore="ObsoleteLayoutParam">
 
 
             <com.google.android.material.textfield.TextInputEditText
@@ -153,7 +156,7 @@
             app:iconSize="20dp"
             app:iconTint="@null"
             app:layout_constraintTop_toBottomOf="@+id/btn_login"
-            tools:ignore="MissingConstraints"
+            tools:ignore="HardcodedText,MissingConstraints"
             tools:layout_editor_absoluteX="120dp" />
 
         <LinearLayout
@@ -165,14 +168,16 @@
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_googleSignIn">
+            app:layout_constraintTop_toBottomOf="@+id/btn_googleSignIn"
+            tools:ignore="ObsoleteLayoutParam">
 
             <TextView
                 android:id="@+id/tv_ques"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Dont have an Account "
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                tools:ignore="HardcodedText" />
 
 
             <TextView
@@ -198,7 +203,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ObsoleteLayoutParam">
 
             <ProgressBar
                 style="?android:attr/progressBarStyle"

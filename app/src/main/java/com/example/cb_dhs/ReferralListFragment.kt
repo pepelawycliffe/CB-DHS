@@ -135,8 +135,8 @@ class ReferralListFragment : Fragment() {
             )
 
         binding.apply {
-            addPatient.setOnClickListener { onAddPatientClick() }
-            addPatient.setColorFilter(Color.WHITE)
+//            addPatient.setOnClickListener { onAddPatientClick() }
+//            addPatient.setColorFilter(Color.WHITE)
         }
         setHasOptionsMenu(true)
         (activity as MainActivity).setDrawerEnabled(false)

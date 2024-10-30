@@ -116,8 +116,8 @@ class PatientDetailsRecyclerViewAdapter(private val onScreenerClick: () -> Unit)
     }
 
     companion object {
-        private const val STROKE_WIDTH = 2f
-        private const val CORNER_RADIUS = 10f
+//        private const val STROKE_WIDTH = 1f
+//        private const val CORNER_RADIUS = 1f
 
         @ColorInt
         private const val FILL_COLOR = Color.TRANSPARENT
@@ -128,7 +128,7 @@ class PatientDetailsRecyclerViewAdapter(private val onScreenerClick: () -> Unit)
         fun allCornersRounded(): MaterialShapeDrawable {
             return MaterialShapeDrawable(
                 ShapeAppearanceModel.builder()
-                    .setAllCornerSizes(CORNER_RADIUS)
+//                    .setAllCornerSizes(CORNER_RADIUS)
                     .setAllCorners(RoundedCornerTreatment())
                     .build(),
             )
@@ -138,8 +138,8 @@ class PatientDetailsRecyclerViewAdapter(private val onScreenerClick: () -> Unit)
         fun topCornersRounded(): MaterialShapeDrawable {
             return MaterialShapeDrawable(
                 ShapeAppearanceModel.builder()
-                    .setTopLeftCornerSize(CORNER_RADIUS)
-                    .setTopRightCornerSize(CORNER_RADIUS)
+//                    .setTopLeftCornerSize(CORNER_RADIUS)
+//                    .setTopRightCornerSize(CORNER_RADIUS)
                     .setTopLeftCorner(RoundedCornerTreatment())
                     .setTopRightCorner(RoundedCornerTreatment())
                     .build(),
@@ -150,8 +150,8 @@ class PatientDetailsRecyclerViewAdapter(private val onScreenerClick: () -> Unit)
         fun bottomCornersRounded(): MaterialShapeDrawable {
             return MaterialShapeDrawable(
                 ShapeAppearanceModel.builder()
-                    .setBottomLeftCornerSize(CORNER_RADIUS)
-                    .setBottomRightCornerSize(CORNER_RADIUS)
+//                    .setBottomLeftCornerSize(CORNER_RADIUS)
+//                    .setBottomRightCornerSize(CORNER_RADIUS)
                     .setBottomLeftCorner(RoundedCornerTreatment())
                     .setBottomRightCorner(RoundedCornerTreatment())
                     .build(),
@@ -164,7 +164,7 @@ class PatientDetailsRecyclerViewAdapter(private val onScreenerClick: () -> Unit)
         }
 
         private fun MaterialShapeDrawable.applyStrokeColor(): MaterialShapeDrawable {
-            strokeWidth = STROKE_WIDTH
+//            strokeWidth = STROKE_WIDTH
             fillColor = ColorStateList.valueOf(FILL_COLOR)
             strokeColor = ColorStateList.valueOf(STROKE_COLOR)
             return this

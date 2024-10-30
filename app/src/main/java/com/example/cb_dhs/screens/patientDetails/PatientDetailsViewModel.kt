@@ -234,6 +234,14 @@ class PatientDetailsViewModel(
                 add(
                     PatientDetailProperty(
                         PatientProperty(
+                            "subCounty",
+                            patientItem.subCounty
+                        ),
+                    ),
+                )
+                add(
+                    PatientDetailProperty(
+                        PatientProperty(
                             "ward",
                             patientItem.ward
                         ),

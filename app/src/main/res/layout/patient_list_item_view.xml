@@ -26,7 +26,8 @@
         android:layout_height="wrap_content"
         android:background="@drawable/round_bg_layout"
         android:orientation="horizontal"
-        android:weightSum="1">
+        android:weightSum="1"
+        tools:ignore="UselessParent">
 
         <LinearLayout
             android:id="@+id/status"
@@ -38,19 +39,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Name :"
-                android:textSize="16dp" />
+                android:textSize="16sp"
+                tools:ignore="HardcodedText,SpUsage" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="CrossBorder ID :"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Date of Birth :"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                tools:ignore="HardcodedText" />
             <!--            <ImageView-->
             <!--                android:id="@+id/status"-->
             <!--                android:layout_width="wrap_content"-->
@@ -85,6 +89,7 @@
                     android:layout_toEndOf="@id/status"
                     android:textAppearance="?attr/textAppearanceSubtitle1"
                     android:textStyle="bold"
+                    tools:ignore="ObsoleteLayoutParam"
                     tools:text="Navya Patel" />
 
                 <TextView
@@ -98,6 +103,7 @@
                     android:layout_marginEnd="@dimen/small_text_margin"
                     android:layout_toEndOf="@id/status"
                     android:textAppearance="?attr/textAppearanceBody2"
+                    tools:ignore="ObsoleteLayoutParam"
                     tools:text="Id: #...456" />
 
                 <TextView
@@ -111,6 +117,7 @@
                     android:layout_marginBottom="@dimen/small_text_margin"
                     android:singleLine="true"
                     android:textAppearance="?attr/textAppearanceBody2"
+                    tools:ignore="ObsoleteLayoutParam"
                     tools:text="50 years old" />
             </LinearLayout>
 
@@ -119,12 +126,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginEnd="10dp">
+                android:layout_marginEnd="10dp"
+                tools:ignore="UselessLeaf">
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/patient_detail_arrow" />
+                <!--                <ImageView-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="294dp"-->
+                <!--                    android:src="@drawable/patient_detail_arrow" />-->
 
                 <!--                <ImageView-->
                 <!--                    android:layout_width="wrap_content"-->

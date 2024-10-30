@@ -32,6 +32,7 @@ import androidx.navigation.fragment.navArgs
 import com.google.android.fhir.datacapture.QuestionnaireFragment
 import kotlinx.coroutines.launch
 
+//class ScreenerFragment : Fragment(R.layout.screener_encounter_fragment) {
 /** A fragment class to show screener questionnaire screen. */
 class ScreenerFragment : Fragment(R.layout.screener_encounter_fragment) {
 
